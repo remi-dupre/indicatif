@@ -245,7 +245,7 @@ impl ProgressBar {
     /// [`ProgressBar::suspend()`]: ProgressBar::suspend
     /// [`MultiProgress`]: crate::MultiProgress
     pub fn println<I: AsRef<str>>(&self, msg: I) {
-        self.state().println(Instant::now(), msg.as_ref());
+        let _ = self.state().println(Instant::now(), msg.as_ref());
     }
 
     /// Update the `ProgressBar`'s inner [`ProgressState`]
